@@ -5,7 +5,7 @@ import uvicorn
 
 from schemas import CarInput, CarOutput, load_db, save_db
 
-app = FastAPI()
+app = FastAPI(title="Car Sharing")
 
 db = load_db()
 

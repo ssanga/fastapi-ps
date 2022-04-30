@@ -75,5 +75,12 @@
         "doors": 5,
         "transmission": "auto",
         "id": 11
+    },
+    {
+        "size": "m",
+        "fuel": "hybrid",
+        "doors": 5,
+        "transmission": "manual",
+        "id": 12
     }
 ]

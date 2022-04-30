@@ -1,4 +1,5 @@
 pip install "fastapi[all]"
+pip install sqlmodel
 
 uvicorn carsharing:app --reload
 
