@@ -1,5 +1,6 @@
 
 
+from hashlib import new
 from db import get_session
 from fastapi import Depends, HTTPException, APIRouter
 from schemas import Car, CarInput, CarOutput, Trip, TripInput
@@ -7,6 +8,9 @@ from sqlmodel import Session, select
 
 
 router = APIRouter(prefix="/api/cars")
+
+class BadTripException(Exception):
+    pass
 
 @router.get("/")
 def get_cars(size: str | None = None, doors: int | None = None,
@@ -69,8 +73,10 @@ def add_trip(car_id: int, trip_input: TripInput,
     print(car)
     if car:
         new_trip = Trip.from_orm(trip_input, update={'car_id': car_id})
+        if new_trip.end < new_trip.start:
+            raise BadTripException("Trip end must be after start.")
+
         car.trips.append(new_trip)
-        
         session.commit()
         session.refresh(new_trip)
         return new_trip
