@@ -1,6 +1,8 @@
 # Pluralsight course
 https://app.pluralsight.com/library/courses/fastapi-fundamentals/table-of-contents
 
+## Web
+- https://fastapi.tiangolo.com/
 
 ## Basic configuration
 
