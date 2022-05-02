@@ -38,11 +38,11 @@ async def unicorn_exception_handler(request: Request, exc: BadTripException):
     )
     
 
-@app.middleware("http")
-async def add_cars_cookie(request: Request, call_next):
-    response = await call_next(request)
-    response.set_cookie("cars_cookie", "this_is_a_cookie")
-    return response
+# @app.middleware("http")
+# async def add_cars_cookie(request: Request, call_next):
+#     response = await call_next(request)
+#     response.set_cookie("cars_cookie", "this_is_a_cookie")
+#     return response
 
 if __name__ == "__main__":
     uvicorn.run("carsharing:app", reload=True)

@@ -5,6 +5,11 @@ from starlette import status
 
 from db import get_session
 from schemas import UserOutput, User
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+
+# URL_PREFIX = "/auth"
+# router = APIRouter(prefix=URL_PREFIX)
+# oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"{URL_PREFIX}/token")
 
 security = HTTPBasic()
 

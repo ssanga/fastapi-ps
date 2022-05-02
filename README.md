@@ -6,8 +6,10 @@ https://app.pluralsight.com/library/courses/fastapi-fundamentals/table-of-conten
 
 ```python
 pip install "fastapi[all]"
+# pip install fastapi[all] --user
 pip install sqlmodel
 pip install "passlib[bcrypt]"
+pip install pytest
 
 uvicorn carsharing:app --reload
 
